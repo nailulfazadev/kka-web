@@ -58,7 +58,7 @@ class CSChatController extends Controller
       //dd($userMsg);
 
         // Call Gemini
-        $apiKey = 'AIzaSyAsLWTL-hqnnmGMScHaoj94F2v5rlvyllg';
+        $apiKey = 'API-Gemini-Flash-2';
         $systemPrompt = $this->getSystemPrompt();
         
         // Include some recent history for context
