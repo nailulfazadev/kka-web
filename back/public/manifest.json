@@ -1,0 +1,21 @@
+{
+    "name": "Academy Guru KKA",
+    "short_name": "AcademyGuru",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#060e20",
+    "theme_color": "#6af2de",
+    "description": "Platform Pelatihan Guru Terpercaya",
+    "icons": [
+        {
+            "src": "/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

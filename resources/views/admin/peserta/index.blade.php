@@ -1,0 +1,8 @@
+@extends('layouts.admin') @section('page-title', 'Peserta') @section('content')
+<div class="flex items-center gap-4 mb-6">
+    <h3 class="text-lg font-semibold text-on-surface">Daftar Peserta</h3>
+    <form method="GET" class="ml-auto flex items-center gap-2"><select name="training_id" class="bg-surface-container-highest border-none rounded-xl py-2 px-3 text-on-surface text-sm"><option value="">Semua Pelatihan</option>@foreach($trainings as $t)<option value="{{ $t->id }}" @selected(request('training_id')==$t->id)>{{ $t->title }}</option>@endforeach</select><button class="bg-primary text-on-primary px-3 py-2 rounded-xl text-sm">Filter</button></form>
+</div>
+<div class="glass-card rounded-2xl border border-white/5 overflow-hidden"><table class="w-full text-sm"><thead><tr class="text-on-surface-variant text-xs uppercase tracking-wider bg-surface-container-high/50"><th class="text-left py-3 px-4">Nama</th><th class="text-left py-3 px-4">Pelatihan</th><th class="text-left py-3 px-4">Status</th><th class="text-left py-3 px-4">Tanggal</th></tr></thead><tbody>@foreach($registrations as $r)<tr class="border-t border-white/5"><td class="py-3 px-4 text-on-surface">{{ $r->user->name }}</td><td class="py-3 px-4 text-on-surface-variant truncate max-w-[200px]">{{ $r->training->title }}</td><td class="py-3 px-4"><span class="px-2 py-1 rounded-full text-[10px] font-bold uppercase {{ $r->status === 'aktif' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400' }}">{{ $r->status }}</span></td><td class="py-3 px-4 text-xs text-on-surface-variant">{{ $r->created_at->format('d/m/Y') }}</td></tr>@endforeach</tbody></table></div>
+<div class="mt-4">{{ $registrations->links() }}</div>
+@endsection
